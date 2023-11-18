@@ -102,6 +102,7 @@ enviar.addEventListener('click', function(){
         }
     }
     if(datosvalidos === (form.length)){
+        alert('Sus datos serán enviados')
         form.submit()
     }else{
         alert('Rellene todos los campos correctamente')
