@@ -61,7 +61,7 @@ enviar.addEventListener('click', function(){
         apellido.classList.add('incorrecto')
     }
 //---------------------------------------------------
-    let regexedad = /^([1-9])|([1-9])([1-9])$/
+    let regexedad = /^([1-9])|([1-9])([0-9])$/
     let edad = document.getElementById('edad')
     if(regexedad.test(edad.value)){
         edad.classList.remove('incorrecto')
