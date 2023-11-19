@@ -81,7 +81,7 @@ enviar.addEventListener('click', function(){
         fecha.classList.add('incorrecto')
     }
 //---------------------------------------------------
-    let regexcedula = /\\.\d{3}\.\d{3}/
+    let regexcedula = /^([1-9]|[1-3][0-9])\.\d{3}\.\d{3}$/
     let cedula = document.getElementById('cedula')
     if(regexcedula.test(cedula.value)){
         cedula.classList.remove('incorrecto')
