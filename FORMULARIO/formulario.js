@@ -91,7 +91,7 @@ enviar.addEventListener('click', function(){
         cedula.classList.add('incorrecto')
     }
 //---------------------------------------------------
-    let regexip = /(25[0-5]|2[0-4][0=9])|1?[0-9]?[0-9]|\.{4}/ 
+    let regexip = /(25[0-5]|2[0-4][0-9])|1?[0-9]?[0-9]|\.{4}/ 
     let ipusuario = document.getElementById('ip')
     if(regexip.test(ipusuario.value)){
         ipusuario.classList.remove('incorrecto')
