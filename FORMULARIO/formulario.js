@@ -12,8 +12,37 @@
 let enviar = document.getElementById('enviar')
 
 enviar.addEventListener('click', function(){
+    let regexes = [/^[a-zA-Z]+\s[a-zA-Z]+$/,/^[a-zA-Z]+\s[a-zA-Z]+$/,/^([1-9])|([1-9])([1-9])$/,/^(19\d{2}|20[0-1][0-9]|202[0-3])\-(0[1-9]|1[0-2])\-(0[1-9]|[1-2][0-9]|3[0-1])$/,/\d{2}\.\d{3}\.\d{3}/, /(25[0-5]|2[0-4][0=9])|1?[0-9]?[0-9]|\.{4}/,/([\da-fA-F]{2}\:){5}/,/\d{3}\-\d{3}\-\d{2}\-\d{2}/]
+    let datos = [document.getElementById('nombre'),document.getElementById('apellido'),document.getElementById('edad'),document.getElementById('fecha'),document.getElementById('cedula'),document.getElementById('ip'),document.getElementById('mac'),document.getElementById('num')]
+    
+    for(let i = 0;i < datos.length;i++){
+        if(regexes[i].test(datos[i].value)){
+            datos[i].classList.remove('incorrecto')
+            datos[i].classList.add('correcto')
+        }else{
+            datos[i].classList.remove('correcto')
+            datos[i].classList.add('incorrecto')
+        }
+    }
 
-    let nombre = document.getElementById('nombre')
+    let form = document.getElementById('form')
+    let datosvalidos = 0;
+    for(let i = 0; i < form.length;i++){
+        if(form[i].classList.value == 'correcto'){
+            datosvalidos++
+        }else{
+            datosvalidos = 0
+        }
+    }
+    if(datosvalidos === (form.length)){
+        alert('Sus datos serán enviados')
+        form.submit()
+    }else{
+        alert('Rellene todos los campos correctamente')
+    }
+})
+
+/*let nombre = document.getElementById('nombre')
     let regexnombre = /^[a-zA-Z]+\s[a-zA-Z]+$/
     if(regexnombre.test(nombre.value)){
         nombre.classList.remove('incorrecto')
@@ -91,24 +120,7 @@ enviar.addEventListener('click', function(){
         num.classList.remove('correcto')
         num.classList.add('incorrecto')
     }
-//--------------------------------------------------
-    let form = document.getElementById('form')
-    let datosvalidos = 0;
-    for(let i = 0; i < form.length;i++){
-        if(form[i].classList.value == 'correcto'){
-            datosvalidos++
-        }else{
-            datosvalidos = 0
-        }
-    }
-    if(datosvalidos === (form.length)){
-        alert('Sus datos serán enviados')
-        form.submit()
-    }else{
-        alert('Rellene todos los campos correctamente')
-    }
-})
 
-
+*/
 
 
