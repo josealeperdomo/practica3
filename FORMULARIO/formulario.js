@@ -12,7 +12,7 @@
 let enviar = document.getElementById('enviar')
 
 enviar.addEventListener('click', function(){
-    let regexes = [/^[a-zA-Z]+\s[a-zA-Z]+$/,/^[a-zA-Z]+\s[a-zA-Z]+$/,/^([1-9])|([1-9])([0-9])$/,/^(19\d{2}|20[0-1][0-9]|202[0-3])\-(0[1-9]|1[0-2])\-(0[1-9]|[1-2][0-9]|3[0-1])$/,/\d{2}\.\d{3}\.\d{3}/, /(25[0-5]|2[0-4][0=9])|1?[0-9]?[0-9]|\.{4}/,/([\da-fA-F]{2}\:){5}/,/\d{3}\-\d{3}\-\d{2}\-\d{2}/]
+    let regexes = [/^[a-zA-Z]+\s[a-zA-Z]+$/,/^[a-zA-Z]+\s[a-zA-Z]+$/,/^([1-9])|([1-9])([0-9])$/,/^(19\d{2}|20[0-1][0-9]|202[0-3])\-(0[1-9]|1[0-2])\-(0[1-9]|[1-2][0-9]|3[0-1])$/,/^([1-9]|[1-3][0-9])\.\d{3}\.\d{3}$/,/(25[0-5]|2[0-4][0=9])|1?[0-9]?[0-9]|\.{4}/,/([\da-fA-F]{2}\:){5}/,/\d{3}\-\d{3}\-\d{2}\-\d{2}/]
     let datos = [document.getElementById('nombre'),document.getElementById('apellido'),document.getElementById('edad'),document.getElementById('fecha'),document.getElementById('cedula'),document.getElementById('ip'),document.getElementById('mac'),document.getElementById('num')]
     
     for(let i = 0;i < datos.length;i++){
@@ -81,7 +81,7 @@ enviar.addEventListener('click', function(){
         fecha.classList.add('incorrecto')
     }
 //---------------------------------------------------
-    let regexcedula = /\d{2}\.\d{3}\.\d{3}/
+    let regexcedula = /\\.\d{3}\.\d{3}/
     let cedula = document.getElementById('cedula')
     if(regexcedula.test(cedula.value)){
         cedula.classList.remove('incorrecto')
